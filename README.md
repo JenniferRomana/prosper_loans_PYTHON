@@ -1,23 +1,54 @@
 # Prosper Loans Exploration
 ## by Jennifer Romana
 
+Prosper loans is a peer-to-peer lending marketplace, which connects borrowers with investors who can choose to fund their loans. This document explores the dataset of Prosper Loans between Nov-2005 and Mar-2014. The dataset includes such variables as basic loan data, customer and some lender information.
+
+
+## Analysis and Report Files
+1. [Analysis (Data visualizations): ](https://github.com/JenniferRomana/prosper_loans_PYTHON/blob/master/Prosper_slides.ipynb)
+2. The [Presentation](https://rawcdn.githack.com/JenniferRomana/prosper_loans_PYTHON/b8752e26700e76612c7dca4d73925c2c4b0abf1c/Prosper_slides.slides.html) is directed
+towards the prospective investor and
+investigates potential returns and risks in investing in Prosper unsecured loans.
+
+
 
 ## Dataset
 
-The original dataset consists of 113,937 Prosper loans with 81 variables each.  The variables include: 
-- data about the loan, from the basics such as amount, term, origination date to more in depth such as service fees and principal losses , 
+The original dataset consists of 113,937 Prosper loans with 81 variables each.  The variables include:
+- data about the loan, from the basics such as amount, term, origination date to more in depth such as service fees and principal losses ,
 - data about the borrower, including credit rating (Agency and in-house), location, occupation and income
-- some information about investor such as Lender Yield and Number of investors 
+- some information about investor such as Lender Yield and Number of investors
 
-After gathering information about the company, the dataset was updated to exclude pre-July 2009 data in order to focus the analysis on the current business model and rating system, which came into effect at the relaunch in 2009 
+After gathering information about the company, the dataset was updated to exclude pre-July 2009 data in order to focus the analysis on the current business model and rating system, which came into effect at the relaunch in 2009
 
 This updated dataset consists of 84,984 Prosper Loans and 81 variables for time period July 2009 to March 2014.
 
+* [The original Prosper Loans Data](https://www.google.com/url?q=https://s3.amazonaws.com/udacity-hosted-downloads/ud651/prosperLoanData.csv&sa=D&ust=1554486256021000)
+* [Prosper Variable Dictionary](https://docs.google.com/spreadsheets/d/1gDyi_L4UvIrLTEC6Wri5nbaMmkGmLQBk-Yx3z0XDEtI/edit#gid=0)
 
+
+## Imports
+import numpy as np<br>
+import pandas as pd<br>
+import matplotlib.pyplot as plt<br>
+import seaborn as sb
+
+## How to create slidedeck
+
+**Requirement:** output_toggle.tpl
+
+This template file can be used with nbconvert to export the slide deck. This adds extra functionality to the slide deck by hiding the code to start, only making it visible if the reader clicks on the output
+
+This template was provided as part of the Udacity Data Analyst Nanodegree.
+
+To view the slide deck use the following expression in the command line:
+```
+jupyter nbconvert Prosper_slides.ipynb --to slides --post serve --template output_toggle
+```
 
 ## Summary of Findings
 
-In this exploration I observed a risk-return tradeoff, in that higher risk loans had a higher yield. 
+In this exploration I observed a risk-return tradeoff, in that higher risk loans had a higher yield.
 
 Returns were proxied by Lender Yield, which displays a normal, right skewed distribution between 4-34%, centres about a mean of 18% and has a spike at 31%
 
@@ -25,10 +56,10 @@ The risk aspect was explored by first defining risk:
 - Non-performing Loans(Chargeoff, Default of 30+ days past due)  
 - losses (Net Principal Loss)  
 
-Common risk predictors and their relation to risk and the Prosper Rating was then explored 
+Common risk predictors and their relation to risk and the Prosper Rating was then explored
 
-**Credit Risk** 
-Credit risk displays a normal distribution with a peak in 650-700 range. 
+**Credit Risk**
+Credit risk displays a normal distribution with a peak in 650-700 range.
 
 It is consistent with expectations about risk in terms of non-performing loans and the Prosper Risk Ratings
 
